@@ -12,7 +12,8 @@ function GamePanel({ cards, selectedLevel, gameStarted, onGameStart }) {
 
   function handleClickCard(card) {
     if (gameStarted) {      
-        setFlippedCards(...flippedCards, card);      
+        setFlippedCards([...flippedCards, card]);    
+        console.log("Entrei aqui 1");
     }
   }
 
@@ -87,7 +88,7 @@ function GamePanel({ cards, selectedLevel, gameStarted, onGameStart }) {
         {cards.map((card) => (
           
           <Card key={card.key} 
-                card={card} 
+                name={card.name} 
                 onClickCard={handleClickCard} 
                 flipped={checkIfIsFlipped(matchedCards, flippedCards, card.id)} 
                 matched={checkIfIsMatched(matchedCards, card.id)}

@@ -27,10 +27,10 @@ function Card(props) {
 
   return (
     <div
-      className={"card " + flippedClass + matchedClass}
-      data-logo={props.card}
+      className={`card ${flippedClass} ${matchedClass}`}
+      data-logo={props.name}
       onClick={() => {
-        props.onClickCard(props.card);
+        props.onClickCard(props.name);
       }}
       onClickCapture={handleClickCaptureCard}
     >
@@ -41,9 +41,9 @@ function Card(props) {
       />
       {/* <img src= {PLACEHOLDER_CARD_PATH+props.name+".png"} className="card-front" alt={props.name} />  */}
       <img
-        src={`${PLACEHOLDER_CARD_PATH}${props.card}.png`}
-        className={"card-front " + cardFrontClass}
-        alt={props.card}
+        src={`${PLACEHOLDER_CARD_PATH}${props.name}.png`}
+        className={`card-front ${cardFrontClass}`}
+        alt={props.name}
       />
     </div>
   );
